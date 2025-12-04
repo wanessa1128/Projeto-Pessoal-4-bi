@@ -63,10 +63,11 @@ let opcao = prompt(`Que Técnica você quer saber sobre:
 
 `)
 
-if(opcao > 7 || opcao < 1) {
-    console.log("\nDado incorreto, por favor reinicie o sistema!")
-} else {
+if(opcao < 8 || opcao > 0) {
     console.log(tecnicas[opcao-1])
+    
+} else {
+    console.log("\nDado incorreto, por favor reinicie o sistema!")
 }
 
 console.log(`
