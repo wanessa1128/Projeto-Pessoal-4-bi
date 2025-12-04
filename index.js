@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")()
+
 let tecnica1 = {
     nome: "Chiaroescuro",
     descricao: "O chiaroscuro usa o contraste forte entre luz e sombra para criar profundidade e impacto dramático na obra.",
@@ -49,17 +51,24 @@ let tecnica7 = {
 
 let tecnicas = [tecnica1, tecnica2, tecnica3, tecnica4, tecnica5, tecnica6, tecnica7]
 
-function mostrarTecnicas(tecnicas) {
-    console.log("--==|´Técnicas de pintura,|==--")
-  for (let i = 0; i < tecnicas.length; i++) {
-    console.log(`\n=== Técnica ${i + 1}: ${tecnicas[i].nome} ===
+console.log("Bem vindo ao Guia de Técnicas de Pintura \n")
+let opcao = prompt(`Que Técnica você quer saber sobre: 
+1 - Chiaroescuro
+2 - Aquarela
+3 - óleo
+4 - Acrilica
+5 - Guache
+6 - Pastel seco
+7 - Tempera
 
-Descrição: ${tecnicas[i].descricao}
+`)
 
-Prós: ${tecnicas[i].pros}
-Contras: ${tecnicas[i].contras}
-=============================`)
-  }
+if(opcao > 7 || opcao < 1) {
+    console.log("\nDado incorreto, por favor reinicie o sistema!")
+} else {
+    console.log(tecnicas[opcao-1])
 }
 
-mostrarTecnicas(tecnicas);
+console.log(`
+Para ver mais reinicie o sistema!
+Volte sempre!`)
